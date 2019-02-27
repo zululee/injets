@@ -27,4 +27,56 @@ class ScrapeAndFilterImagesJob < ApplicationJob
     hydra.run
   end
 
+  def image_urls_from(image_page_url)
+    page_html = Typhoeus::Request.get(image_page_url).body
+    Nokogiri::HTML(page_html).css("img").map {|img| img["src"]}.compact.uniq
+  end
+
+  def post_images_to_slack(from:, to:)
+    desired_images, slack_response_url = from, to
+    post_body = if desired_images.present?
+      {
+        response_type: 'ephemeral',
+        attachments: desired_images.map{ |image|
+          {
+            title: image.url,
+            image_url: image.url
+          }
+        }
+      }
+    else
+      {
+        response_type: 'ephemeral',
+        text: "No #{desired_images.subject_filter.singularize} images found... :disappointed:"
+      }
+    end
+    Typhoeus.post(slack_response_url, body: post_body.to_json)
+  end
+
+  def image_urls_from(image_page_url)
+    page_html = Typhoeus::Request.get(image_page_url).body
+    Nokogiri::HTML(page_html).css("img").map {|img| img["src"]}.compact.uniq
+  end
+
+  def post_images_to_slack(from:, to:)
+    desired_images, slack_response_url = from, to
+    post_body = if desired_images.present?
+      {
+        response_type: 'ephemeral',
+        attachments: desired_images.map{ |image|
+          {
+            title: image.url,
+            image_url: image.url
+          }
+        }
+      }
+    else
+      {
+        response_type: 'ephemeral',
+        text: "No #{desired_images.subject_filter.singularize} images found... :disappointed:"
+      }
+    end
+    Typhoeus.post(slack_response_url, body: post_body.to_json)
+  end
+
 end
