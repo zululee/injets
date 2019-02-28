@@ -29,5 +29,5 @@ end
 #open cloudwatch monitoring
 /scrape https://www.pexels.com/search/beach tree
 #picture from silicon valley
-/scrape https://www.pexels.com/search/hotdog hotdog
+/scrape https://www.pexels.com/search/hotdog hot dog
 /scrape https://www.pexels.com/search/burger burger
