@@ -2,7 +2,7 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV["DB_POOL"] || 5  %>
-  database: <%= ENV['DB_NAME'] || 'injets_development' %>
+  database: <%= ENV['DB_NAME'] || 'slack_image_scraper_development' %>
   username: <%= ENV['DB_USER'] || 'root' %>
   password: <%= ENV['DB_PASS'] %>
   host: <%= ENV["DB_HOST"] %>
@@ -10,13 +10,13 @@ default: &default
 
 development:
   <<: *default
-  database: <%= ENV['DB_NAME'] || 'injets_development' %>
+  database: <%= ENV['DB_NAME'] || 'slack_image_scraper_development' %>
 
 test:
   <<: *default
-  database: injets_test
+  database: slack_image_scraper_test
 
 production:
   <<: *default
-  database: injets_production
+  database: slack_image_scraper_production
   url: <%= ENV['DATABASE_URL'] %>

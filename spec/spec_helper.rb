@@ -10,8 +10,6 @@ require "jets"
 abort("The Jets environment is running in production mode!") if Jets.env == "production"
 Jets.boot
 
-require "jets/spec_helpers"
-
 
 
 module Helpers

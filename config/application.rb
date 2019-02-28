@@ -1,8 +1,8 @@
 Jets.application.configure do
-  config.project_name = "injets"
+  config.project_name = "slack_image_scraper"
   config.mode = "api"
 
-  config.prewarm.enable = true # default is true
+  # config.prewarm.enable = true # default is true
   # config.prewarm.rate = '30 minutes' # default is '30 minutes'
   # config.prewarm.concurrency = 2 # default is 2
   # config.prewarm.public_ratio = 3 # default is 3
@@ -12,7 +12,7 @@ Jets.application.configure do
 
   # config.asset_base_url = 'https://cloudfront.domain.com/assets' # example
 
-  # config.cors = true # for '*'' # defaults to false
+  # config.cors = true # for '*'' # defaults to true
   # config.cors = '*.mydomain.com' # for specific domain
 
   # config.function.timeout = 30 # defaults to 30
@@ -54,9 +54,4 @@ Jets.application.configure do
   # us-east-1 EDGE endpoint
   # config.domain.cert_arn = "arn:aws:acm:us-east-1:112233445566:certificate/d68472ba-04f8-45ba-b9db-14f839d57123"
   # config.domain.endpoint_type = "EDGE"
-
-  # By default logger needs to log to $stderr for CloudWatch to receive Lambda messages, but for
-  # local testing environment you may want to log these messages to 'test.log' file to keep your
-  # testing suite output readable.
-  # config.logger = Jets::Logger.new($strerr)
 end

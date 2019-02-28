@@ -1,15 +1,16 @@
 # Example:
 # describe PostsController, type: :controller do
 #   it "index returns a success response" do
-#     get '/posts'
-#     expect(response.status).to eq 200
-#     pp response.body
+#     event = payload("posts-index")
+#     controller = PostsController.new(event)
+#     response = controller.index
+#     # pp response
 #   end
-#
+
 #   it "show returns a success response" do
-#     Post.create(id: 1) unless Post.find_by(id: 1) # TODO: set up factory_bot
-#     get '/posts/:id', id: 1
-#     expect(response.status).to eq 200
-#     pp response.body
+#     event = payload("posts-show")
+#     controller = PostsController.new(event)
+#     response = controller.show
+#     # pp response
 #   end
 # end
