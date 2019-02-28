@@ -1,4 +1,13 @@
-#what was ruby on rails?
+# Agenda
+# Introduce you to Jets
+# Want to show you how CloudFormation can be used as an assembly language for other tools.
+
+# Code used throughout — you may come across, and more often in the future, instances where an org uses a language for 
+# Entirely code driven process
+
+# what was ruby on rails?
+
+# Environment specific config
 
 app/controllers/demo_controller.rb
 class DemoController < ApplicationController
