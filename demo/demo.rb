@@ -1,15 +1,3 @@
-# app/controllers/demo_controller.rb
-class DemoController < ApplicationController
-
-  def hello
-    render json: {
-      response_type: 'ephemeral',
-      text: "Hello!"
-    }
-  end
-
-end
-
 # Slack payload
 {
   "token": "8J6PzN5k54d2ibXuObK7sjBv",
@@ -25,6 +13,6 @@ end
   "trigger_id": "563304614725.562816501507.f91693e1851f65934f857875db94a930"
 }
 
-/scrape https://www.pexels.com/search/hotdog hot dog
+/scrape https://www.pexels.com/search/hotdog hot dog  
 /scrape https://www.pexels.com/search/beach tree
 /scrape https://www.pexels.com/search/burger burger
